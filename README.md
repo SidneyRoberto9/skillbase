@@ -16,6 +16,7 @@ the exact same set of skills.
 | **auto-commit** | Analyzes the working tree and creates Conventional Commits — auto-chooses squash vs atomic, adds `type(scope)`, English / imperative, verifies the tree, and **never adds a `Co-Authored-By` trailer**. |
 | **post-docs** | After a feature lands, syncs the docs to match: `CLAUDE.md`, `docs/modulos/<module>.md` (mirrored api ↔ ui), endpoint references. Keeps each doc in its existing language (PT / EN). |
 | **ai-sync** | Mirrors this repo's skills into your local Claude install. Pulls the latest repo, installs/updates every skill, and **deletes any installed skill that is not in this repo**. |
+| **zull-merge** | Propagates `develop` to `config/zull-implementation` and `main` in parallel (merge + push), with `develop` winning conflicts (`-X theirs`). All-or-nothing: aborts if any of the three branches is missing on `origin`; never touches `develop` (reads `origin/develop` only); off-branch targets run in worktrees that are always cleaned up. |
 
 They compose into a pipeline:
 
