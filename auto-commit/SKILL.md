@@ -269,6 +269,14 @@ Atomicity means logical independence, not arbitrary file separation.
 
 # Execution Protocol
 
+## 0. Next.js projects
+
+If the `package.json` at the git top level lists `next` in `dependencies` or
+`devDependencies`, invoke the `next-clean` skill before step 1, then survey the
+tree including its fixes. The commit hook blocks any commit whose code files
+changed after the last `next-clean` run, so running it first means every commit
+already contains the fixes.
+
 ## 1. Survey repository state
 
 Run:
